@@ -34,7 +34,7 @@ public class LogMessageAPI {
                 String.format(template_get, id));
     }
 
-    @RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/publish", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public LogMessage publish(@RequestBody Waki waki) {
         publishAPIMessageHandler.handOver(waki);
         return new LogMessage(counter.incrementAndGet(),
